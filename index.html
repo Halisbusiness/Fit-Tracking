@@ -35,84 +35,247 @@
       targets:{ calories:2570, protein:177, carbs:290, fat:72, water:3000 },
     };
 
-    const FOODS = [
-      {id:1,  cat:"🥚 Kahvaltılık", name:"Yumurta, haşlanmış (1 adet)",   cal:78,  p:6,   c:0.6, f:5   },
-      {id:2,  cat:"🥚 Kahvaltılık", name:"Yumurta, sahanda (1 adet)",     cal:90,  p:6,   c:0.4, f:7   },
-      {id:3,  cat:"🥚 Kahvaltılık", name:"Omlet (2 yumurta)",             cal:186, p:12,  c:1,   f:14  },
-      {id:4,  cat:"🥚 Kahvaltılık", name:"Menemen (1 porsiyon)",          cal:220, p:11,  c:8,   f:16  },
-      {id:5,  cat:"🧀 Kahvaltılık", name:"Beyaz Peynir (30g)",            cal:75,  p:5,   c:0.5, f:6   },
-      {id:6,  cat:"🧀 Kahvaltılık", name:"Kaşar Peyniri (30g)",           cal:111, p:7,   c:0.4, f:9   },
-      {id:7,  cat:"🧀 Kahvaltılık", name:"Lor Peyniri (100g)",            cal:98,  p:11,  c:3.4, f:4.3 },
-      {id:8,  cat:"🍞 Ekmek/Hamur", name:"Ekmek, beyaz (1 dilim 30g)",   cal:79,  p:2.7, c:15,  f:1   },
-      {id:9,  cat:"🍞 Ekmek/Hamur", name:"Ekmek, tam buğday (1 dilim)",  cal:69,  p:3.6, c:12,  f:1.1 },
-      {id:10, cat:"🍞 Ekmek/Hamur", name:"Simit (1 orta boy 120g)",      cal:345, p:10,  c:68,  f:4   },
-      {id:11, cat:"🍞 Ekmek/Hamur", name:"Açma (1 adet 80g)",            cal:274, p:6,   c:38,  f:12  },
-      {id:12, cat:"🍞 Ekmek/Hamur", name:"Poğaça, peynirli (1 adet)",    cal:290, p:8,   c:35,  f:13  },
-      {id:13, cat:"🍞 Ekmek/Hamur", name:"Poğaça, patatesli (1 adet)",   cal:265, p:5,   c:40,  f:10  },
-      {id:14, cat:"🍞 Ekmek/Hamur", name:"Pide (1 dilim 80g)",           cal:196, p:6.5, c:38,  f:2   },
-      {id:15, cat:"🍞 Ekmek/Hamur", name:"Lavash (1 adet 60g)",          cal:168, p:5,   c:34,  f:1.5 },
-      {id:16, cat:"🍗 Et & Protein", name:"Tavuk göğsü, ızgara (100g)",  cal:165, p:31,  c:0,   f:3.6 },
-      {id:17, cat:"🍗 Et & Protein", name:"Tavuk but, haşlanmış (100g)", cal:189, p:27,  c:0,   f:9   },
-      {id:18, cat:"🍗 Et & Protein", name:"Dana kıyma (100g)",           cal:215, p:26,  c:0,   f:12  },
-      {id:19, cat:"🍗 Et & Protein", name:"Dana biftek (100g)",          cal:217, p:26,  c:0,   f:12  },
-      {id:20, cat:"🍗 Et & Protein", name:"Ton balığı, konserve (100g)", cal:132, p:29,  c:0,   f:1   },
-      {id:21, cat:"🍗 Et & Protein", name:"Somon (100g)",                cal:208, p:20,  c:0,   f:13  },
-      {id:22, cat:"🍗 Et & Protein", name:"Yumurta akı (1 adet)",        cal:17,  p:3.6, c:0.2, f:0   },
-      {id:23, cat:"🍗 Et & Protein", name:"Protein tozu (1 ölçek 30g)", cal:120, p:24,  c:3,   f:1.5 },
-      {id:24, cat:"🍚 Tahıl & Karb", name:"Pirinç pilavı (100g)",       cal:130, p:2.7, c:28,  f:0.3 },
-      {id:25, cat:"🍚 Tahıl & Karb", name:"Makarna, haşlanmış (100g)",  cal:131, p:5,   c:25,  f:1.1 },
-      {id:26, cat:"🍚 Tahıl & Karb", name:"Makarna, kuru (100g)",       cal:371, p:13,  c:74,  f:1.5 },
-      {id:27, cat:"🍚 Tahıl & Karb", name:"Yulaf ezmesi (50g kuru)",    cal:193, p:6.5, c:33,  f:3.5 },
-      {id:28, cat:"🍚 Tahıl & Karb", name:"Bulgur, pişmiş (100g)",      cal:83,  p:3.1, c:18,  f:0.2 },
-      {id:29, cat:"🍚 Tahıl & Karb", name:"Patates, haşlanmış (100g)",  cal:87,  p:1.9, c:20,  f:0.1 },
-      {id:30, cat:"🍚 Tahıl & Karb", name:"Patates kızartması (100g)",  cal:312, p:3.4, c:41,  f:15  },
-      {id:31, cat:"🥦 Sebze",        name:"Pırasa, haşlanmış (100g)",   cal:31,  p:1.8, c:7.6, f:0.3 },
-      {id:32, cat:"🥦 Sebze",        name:"Ispanak, haşlanmış (100g)",  cal:23,  p:2.9, c:3.8, f:0.3 },
-      {id:33, cat:"🥦 Sebze",        name:"Brokoli, haşlanmış (100g)",  cal:35,  p:2.4, c:7,   f:0.4 },
-      {id:34, cat:"🥦 Sebze",        name:"Havuç (1 orta 80g)",         cal:33,  p:0.7, c:7.7, f:0.1 },
-      {id:35, cat:"🥦 Sebze",        name:"Domates (1 orta)",           cal:22,  p:1.1, c:4.8, f:0.2 },
-      {id:36, cat:"🥦 Sebze",        name:"Salatalık (100g)",           cal:16,  p:0.7, c:3.6, f:0.1 },
-      {id:37, cat:"🍎 Meyve",        name:"Muz (1 orta 120g)",          cal:105, p:1.3, c:27,  f:0.4 },
-      {id:38, cat:"🍎 Meyve",        name:"Elma (1 orta 180g)",         cal:95,  p:0.5, c:25,  f:0.3 },
-      {id:39, cat:"🍎 Meyve",        name:"Portakal (1 orta 150g)",     cal:62,  p:1.2, c:15,  f:0.2 },
-      {id:40, cat:"🍎 Meyve",        name:"Çilek (100g)",               cal:33,  p:0.7, c:8,   f:0.3 },
-      {id:41, cat:"🍎 Meyve",        name:"Kivi (1 adet 75g)",          cal:46,  p:0.9, c:11,  f:0.4 },
-      {id:42, cat:"🍎 Meyve",        name:"Üzüm (100g)",                cal:69,  p:0.7, c:18,  f:0.2 },
-      {id:43, cat:"🍎 Meyve",        name:"Karpuz (200g)",              cal:60,  p:1.2, c:15,  f:0.2 },
-      {id:44, cat:"🍎 Meyve",        name:"Kavun (200g)",               cal:54,  p:1.3, c:13,  f:0.3 },
-      {id:45, cat:"🍎 Meyve",        name:"Şeftali (1 orta 150g)",      cal:58,  p:1.4, c:14,  f:0.4 },
-      {id:46, cat:"🍎 Meyve",        name:"Armut (1 orta 180g)",        cal:101, p:0.6, c:27,  f:0.2 },
-      {id:47, cat:"🍎 Meyve",        name:"Mandalina (2 adet)",         cal:85,  p:1.3, c:21,  f:0.3 },
-      {id:48, cat:"🥤 Taze Sıkım",   name:"Portakal suyu, taze (200ml)",cal:88,  p:1.4, c:21,  f:0.2 },
-      {id:49, cat:"🥤 Taze Sıkım",   name:"Nar suyu, taze (200ml)",    cal:134, p:0.9, c:34,  f:0.3 },
-      {id:50, cat:"🥤 Taze Sıkım",   name:"Elma suyu, taze (200ml)",   cal:114, p:0.2, c:28,  f:0.3 },
-      {id:51, cat:"🥤 Taze Sıkım",   name:"Havuç suyu, taze (200ml)",  cal:94,  p:2.2, c:22,  f:0.4 },
-      {id:52, cat:"🥤 Taze Sıkım",   name:"Greyfurt suyu (200ml)",     cal:74,  p:1.4, c:18,  f:0.2 },
-      {id:53, cat:"🥤 Taze Sıkım",   name:"Limonata, ev yapımı (300ml)",cal:102,p:0.2, c:27,  f:0.1 },
-      {id:54, cat:"🥤 Taze Sıkım",   name:"Karışık meyve suyu (200ml)",cal:110, p:0.8, c:27,  f:0.2 },
-      {id:55, cat:"🥛 Süt & Yoğurt", name:"Süt, tam yağlı (200ml)",    cal:122, p:6.4, c:9.4, f:6.6 },
-      {id:56, cat:"🥛 Süt & Yoğurt", name:"Süt, yarım yağlı (200ml)",  cal:92,  p:6.4, c:9.4, f:3.3 },
-      {id:57, cat:"🥛 Süt & Yoğurt", name:"Yoğurt, sade (150g)",       cal:89,  p:5.2, c:6.8, f:4.5 },
-      {id:58, cat:"🥛 Süt & Yoğurt", name:"Yoğurt, light (150g)",      cal:63,  p:5.8, c:7.5, f:1.5 },
-      {id:59, cat:"🥛 Süt & Yoğurt", name:"Ayran (200ml)",             cal:56,  p:3.2, c:4.2, f:2.8 },
-      {id:60, cat:"🥛 Süt & Yoğurt", name:"Kefir (200ml)",             cal:104, p:6,   c:9,   f:4.4 },
-      {id:61, cat:"🥜 Kuruyemiş",    name:"Badem (10 adet 15g)",       cal:87,  p:3.2, c:3,   f:7.6 },
-      {id:62, cat:"🥜 Kuruyemiş",    name:"Ceviz (4 yarım 15g)",       cal:98,  p:2.3, c:2.1, f:9.7 },
-      {id:63, cat:"🥜 Kuruyemiş",    name:"Fıstık ezmesi (1 y.kaşığı)",cal:94,  p:4,   c:3,   f:8   },
-      {id:64, cat:"🥜 Kuruyemiş",    name:"Zeytinyağı (1 y.kaşığı)",   cal:119, p:0,   c:0,   f:14  },
-      {id:65, cat:"☕ İçecek",       name:"Türk kahvesi (sade)",       cal:2,   p:0.3, c:0,   f:0   },
-      {id:66, cat:"☕ İçecek",       name:"Çay (sade)",                cal:2,   p:0,   c:0.5, f:0   },
-      {id:67, cat:"☕ İçecek",       name:"Nescafé, sütlü (200ml)",    cal:92,  p:3.4, c:12,  f:3   },
+    const BASE_FOODS = [
+      // ── KAHVALTILIK ──────────────────────────────────────────────────────────
+      {id:1,  cat:"🥚 Kahvaltılık", name:"Yumurta, haşlanmış (1 adet)",    cal:78,  p:6,   c:0.6, f:5   },
+      {id:2,  cat:"🥚 Kahvaltılık", name:"Yumurta, sahanda (1 adet)",      cal:90,  p:6,   c:0.4, f:7   },
+      {id:3,  cat:"🥚 Kahvaltılık", name:"Omlet, sade (2 yumurta)",        cal:186, p:12,  c:1,   f:14  },
+      {id:4,  cat:"🥚 Kahvaltılık", name:"Menemen (1 porsiyon)",           cal:220, p:11,  c:8,   f:16  },
+      {id:5,  cat:"🥚 Kahvaltılık", name:"Çılbır (2 yumurta)",             cal:210, p:13,  c:4,   f:16  },
+      {id:6,  cat:"🧀 Kahvaltılık", name:"Beyaz peynir (30g)",             cal:75,  p:5,   c:0.5, f:6   },
+      {id:7,  cat:"🧀 Kahvaltılık", name:"Kaşar peyniri (30g)",            cal:111, p:7,   c:0.4, f:9   },
+      {id:8,  cat:"🧀 Kahvaltılık", name:"Lor peyniri (100g)",             cal:98,  p:11,  c:3.4, f:4.3 },
+      {id:9,  cat:"🧀 Kahvaltılık", name:"Tulum peyniri (30g)",            cal:105, p:6.5, c:0.3, f:9   },
+      {id:10, cat:"🧀 Kahvaltılık", name:"Çökelek (100g)",                 cal:72,  p:12,  c:2,   f:1.5 },
+      {id:11, cat:"🧀 Kahvaltılık", name:"Hellim peyniri (30g)",           cal:90,  p:6,   c:0.5, f:7   },
+      {id:12, cat:"🍯 Kahvaltılık", name:"Bal (1 y.kaşığı 20g)",           cal:60,  p:0.1, c:16,  f:0   },
+      {id:13, cat:"🍯 Kahvaltılık", name:"Reçel (1 y.kaşığı 20g)",        cal:55,  p:0.1, c:14,  f:0   },
+      {id:14, cat:"🫒 Kahvaltılık", name:"Zeytin, siyah (10 adet)",        cal:52,  p:0.4, c:1.4, f:5   },
+      {id:15, cat:"🫒 Kahvaltılık", name:"Zeytin, yeşil (10 adet)",        cal:45,  p:0.4, c:1,   f:4.5 },
+      {id:16, cat:"🫒 Kahvaltılık", name:"Domates (1 orta)",               cal:22,  p:1.1, c:4.8, f:0.2 },
+      {id:17, cat:"🫒 Kahvaltılık", name:"Salatalık (1 orta)",             cal:16,  p:0.7, c:3.6, f:0.1 },
+      {id:18, cat:"🫒 Kahvaltılık", name:"Biber, yeşil sivri (1 adet)",    cal:20,  p:1,   c:4.6, f:0.2 },
+
+      // ── EKMEK / HAMUR İŞLERİ ─────────────────────────────────────────────
+      {id:19, cat:"🍞 Ekmek/Hamur", name:"Ekmek, beyaz (1 dilim 30g)",    cal:79,  p:2.7, c:15,  f:1   },
+      {id:20, cat:"🍞 Ekmek/Hamur", name:"Ekmek, tam buğday (1 dilim)",   cal:69,  p:3.6, c:12,  f:1.1 },
+      {id:21, cat:"🍞 Ekmek/Hamur", name:"Ekmek, çavdar (1 dilim)",       cal:65,  p:2.7, c:12,  f:0.9 },
+      {id:22, cat:"🍞 Ekmek/Hamur", name:"Simit (1 orta boy 120g)",       cal:345, p:10,  c:68,  f:4   },
+      {id:23, cat:"🍞 Ekmek/Hamur", name:"Açma (1 adet 80g)",             cal:274, p:6,   c:38,  f:12  },
+      {id:24, cat:"🍞 Ekmek/Hamur", name:"Poğaça, peynirli (1 adet)",     cal:290, p:8,   c:35,  f:13  },
+      {id:25, cat:"🍞 Ekmek/Hamur", name:"Poğaça, patatesli (1 adet)",    cal:265, p:5,   c:40,  f:10  },
+      {id:26, cat:"🍞 Ekmek/Hamur", name:"Poğaça, zeytinli (1 adet)",     cal:280, p:6,   c:36,  f:12  },
+      {id:27, cat:"🍞 Ekmek/Hamur", name:"Pide (1 dilim 80g)",            cal:196, p:6.5, c:38,  f:2   },
+      {id:28, cat:"🍞 Ekmek/Hamur", name:"Bazlama (1 adet 70g)",          cal:178, p:5.5, c:34,  f:2.8 },
+      {id:29, cat:"🍞 Ekmek/Hamur", name:"Lavash (1 adet 60g)",           cal:168, p:5,   c:34,  f:1.5 },
+      {id:30, cat:"🍞 Ekmek/Hamur", name:"Kruvasan (1 adet 60g)",         cal:231, p:4.5, c:26,  f:12  },
+      {id:31, cat:"🍞 Ekmek/Hamur", name:"Galeta, sade (3 adet)",         cal:110, p:2.5, c:22,  f:1.5 },
+      {id:32, cat:"🍞 Ekmek/Hamur", name:"Grissini (4 çubuk)",            cal:88,  p:2,   c:18,  f:1   },
+      {id:33, cat:"🍞 Ekmek/Hamur", name:"Su böreği (1 dilim 120g)",      cal:295, p:11,  c:28,  f:15  },
+      {id:34, cat:"🍞 Ekmek/Hamur", name:"Ispanaklı börek (1 dilim)",     cal:270, p:8,   c:26,  f:14  },
+      {id:35, cat:"🍞 Ekmek/Hamur", name:"Sigara böreği (2 adet)",        cal:220, p:7,   c:22,  f:11  },
+      {id:36, cat:"🍞 Ekmek/Hamur", name:"Kol böreği (1 dilim 100g)",     cal:310, p:9,   c:30,  f:17  },
+      {id:37, cat:"🍞 Ekmek/Hamur", name:"Gözleme, peynirli (1 adet)",    cal:320, p:12,  c:38,  f:13  },
+      {id:38, cat:"🍞 Ekmek/Hamur", name:"Gözleme, patatesli (1 adet)",   cal:295, p:8,   c:44,  f:10  },
+
+      // ── ÇORBALAR ─────────────────────────────────────────────────────────
+      {id:39, cat:"🍲 Çorbalar",    name:"Mercimek çorbası (1 kase 250ml)",cal:130, p:7,   c:20,  f:2.5 },
+      {id:40, cat:"🍲 Çorbalar",    name:"Ezogelin çorbası (1 kase)",      cal:145, p:6.5, c:24,  f:2.5 },
+      {id:41, cat:"🍲 Çorbalar",    name:"Domates çorbası (1 kase)",       cal:95,  p:3,   c:14,  f:3   },
+      {id:42, cat:"🍲 Çorbalar",    name:"Tarhana çorbası (1 kase)",       cal:120, p:5,   c:20,  f:2   },
+      {id:43, cat:"🍲 Çorbalar",    name:"Yoğurt çorbası (1 kase)",        cal:115, p:5.5, c:13,  f:4.5 },
+      {id:44, cat:"🍲 Çorbalar",    name:"Şehriye çorbası (1 kase)",       cal:110, p:4,   c:18,  f:2   },
+      {id:45, cat:"🍲 Çorbalar",    name:"Tavuk çorbası (1 kase)",         cal:125, p:9,   c:12,  f:4   },
+      {id:46, cat:"🍲 Çorbalar",    name:"İşkembe çorbası (1 kase)",       cal:150, p:10,  c:8,   f:8   },
+      {id:47, cat:"🍲 Çorbalar",    name:"Paça çorbası (1 kase)",          cal:140, p:12,  c:5,   f:8   },
+      {id:48, cat:"🍲 Çorbalar",    name:"Kremalı mantar çorbası (1 kase)",cal:165, p:4,   c:12,  f:11  },
+      {id:49, cat:"🍲 Çorbalar",    name:"Soğan çorbası (1 kase)",         cal:105, p:3,   c:14,  f:4   },
+      {id:50, cat:"🍲 Çorbalar",    name:"Gaziantep usulü çorba (1 kase)", cal:135, p:6,   c:18,  f:4   },
+      {id:51, cat:"🍲 Çorbalar",    name:"Beyran (1 kase)",                cal:190, p:16,  c:10,  f:9   },
+      {id:52, cat:"🍲 Çorbalar",    name:"Yayla çorbası (1 kase)",         cal:120, p:5,   c:14,  f:5   },
+
+      // ── ET & PROTEİN ─────────────────────────────────────────────────────
+      {id:53, cat:"🍗 Et & Protein", name:"Tavuk göğsü, ızgara (100g)",    cal:165, p:31,  c:0,   f:3.6 },
+      {id:54, cat:"🍗 Et & Protein", name:"Tavuk but, haşlanmış (100g)",   cal:189, p:27,  c:0,   f:9   },
+      {id:55, cat:"🍗 Et & Protein", name:"Tavuk kanat, fırın (100g)",     cal:222, p:23,  c:0,   f:14  },
+      {id:56, cat:"🍗 Et & Protein", name:"Tavuk döner (100g)",            cal:195, p:22,  c:2,   f:11  },
+      {id:57, cat:"🍗 Et & Protein", name:"Dana kıyma (100g)",             cal:215, p:26,  c:0,   f:12  },
+      {id:58, cat:"🍗 Et & Protein", name:"Dana biftek (100g)",            cal:217, p:26,  c:0,   f:12  },
+      {id:59, cat:"🍗 Et & Protein", name:"Dana döner (100g)",             cal:225, p:24,  c:2,   f:13  },
+      {id:60, cat:"🍗 Et & Protein", name:"Kuzu pirzola (100g)",           cal:294, p:24,  c:0,   f:21  },
+      {id:61, cat:"🍗 Et & Protein", name:"Kuzu but, haşlanmış (100g)",    cal:235, p:25,  c:0,   f:15  },
+      {id:62, cat:"🍗 Et & Protein", name:"Köfte, ızgara (3 adet 90g)",    cal:252, p:22,  c:5,   f:15  },
+      {id:63, cat:"🍗 Et & Protein", name:"Adana kebap (100g)",            cal:270, p:24,  c:3,   f:17  },
+      {id:64, cat:"🍗 Et & Protein", name:"Urfa kebap (100g)",             cal:258, p:24,  c:2,   f:16  },
+      {id:65, cat:"🍗 Et & Protein", name:"Tavuk şiş (100g)",              cal:162, p:28,  c:1,   f:5   },
+      {id:66, cat:"🍗 Et & Protein", name:"Balık, levrek ızgara (100g)",   cal:124, p:24,  c:0,   f:3   },
+      {id:67, cat:"🍗 Et & Protein", name:"Balık, çipura ızgara (100g)",   cal:128, p:22,  c:0,   f:4.5 },
+      {id:68, cat:"🍗 Et & Protein", name:"Somon, ızgara (100g)",          cal:208, p:20,  c:0,   f:13  },
+      {id:69, cat:"🍗 Et & Protein", name:"Ton balığı, konserve (100g)",   cal:132, p:29,  c:0,   f:1   },
+      {id:70, cat:"🍗 Et & Protein", name:"Karides, haşlanmış (100g)",     cal:99,  p:21,  c:0.9, f:1.1 },
+      {id:71, cat:"🍗 Et & Protein", name:"Sucuk (2 dilim 30g)",           cal:138, p:5.5, c:1,   f:12  },
+      {id:72, cat:"🍗 Et & Protein", name:"Pastırma (3 dilim 30g)",        cal:108, p:10,  c:0.5, f:7.5 },
+      {id:73, cat:"🍗 Et & Protein", name:"Hindi göğsü (100g)",            cal:135, p:29,  c:1,   f:1.5 },
+      {id:74, cat:"🍗 Et & Protein", name:"Yumurta akı (1 adet)",          cal:17,  p:3.6, c:0.2, f:0   },
+      {id:75, cat:"🍗 Et & Protein", name:"Protein tozu (1 ölçek 30g)",   cal:120, p:24,  c:3,   f:1.5 },
+
+      // ── ANA YEMEKLER ─────────────────────────────────────────────────────
+      {id:76, cat:"🍽️ Ana Yemekler", name:"Kuru fasulye (1 porsiyon 250g)",cal:285, p:15,  c:42,  f:5   },
+      {id:77, cat:"🍽️ Ana Yemekler", name:"Mercimek yemeği (1 porsiyon)",  cal:230, p:13,  c:36,  f:3.5 },
+      {id:78, cat:"🍽️ Ana Yemekler", name:"Nohut yemeği (1 porsiyon)",     cal:265, p:12,  c:40,  f:5.5 },
+      {id:79, cat:"🍽️ Ana Yemekler", name:"Bezelye yemeği (1 porsiyon)",   cal:195, p:8,   c:30,  f:5   },
+      {id:80, cat:"🍽️ Ana Yemekler", name:"Bamya (1 porsiyon)",            cal:145, p:7,   c:15,  f:6   },
+      {id:81, cat:"🍽️ Ana Yemekler", name:"Etli taze fasulye (1 porsiyon)",cal:195, p:12,  c:18,  f:8   },
+      {id:82, cat:"🍽️ Ana Yemekler", name:"Patlıcan musakka (1 porsiyon)", cal:310, p:16,  c:18,  f:20  },
+      {id:83, cat:"🍽️ Ana Yemekler", name:"İmam bayıldı (1 porsiyon)",     cal:220, p:4,   c:22,  f:13  },
+      {id:84, cat:"🍽️ Ana Yemekler", name:"Dolma, biber (3 adet)",         cal:185, p:7,   c:28,  f:5   },
+      {id:85, cat:"🍽️ Ana Yemekler", name:"Yaprak sarma (4 adet)",         cal:190, p:6.5, c:26,  f:7   },
+      {id:86, cat:"🍽️ Ana Yemekler", name:"Karnıyarık (1 porsiyon)",       cal:320, p:18,  c:22,  f:18  },
+      {id:87, cat:"🍽️ Ana Yemekler", name:"İskender kebap (1 porsiyon)",   cal:480, p:28,  c:35,  f:26  },
+      {id:88, cat:"🍽️ Ana Yemekler", name:"Lahmacun (1 adet)",             cal:185, p:10,  c:26,  f:5   },
+      {id:89, cat:"🍽️ Ana Yemekler", name:"Pide, kaşarlı (1 adet)",        cal:390, p:16,  c:54,  f:12  },
+      {id:90, cat:"🍽️ Ana Yemekler", name:"Pide, kıymalı (1 adet)",        cal:420, p:20,  c:54,  f:14  },
+      {id:91, cat:"🍽️ Ana Yemekler", name:"Mantı (1 porsiyon 200g)",       cal:365, p:16,  c:48,  f:12  },
+      {id:92, cat:"🍽️ Ana Yemekler", name:"Hünkar beğendi (1 porsiyon)",   cal:395, p:22,  c:22,  f:25  },
+      {id:93, cat:"🍽️ Ana Yemekler", name:"Tas kebabı (1 porsiyon)",       cal:340, p:24,  c:20,  f:18  },
+      {id:94, cat:"🍽️ Ana Yemekler", name:"Güveç (1 porsiyon)",            cal:305, p:22,  c:18,  f:16  },
+      {id:95, cat:"🍽️ Ana Yemekler", name:"Orman kebabı (1 porsiyon)",     cal:355, p:26,  c:15,  f:20  },
+
+      // ── TAHIL & KARBONHİDRAT ─────────────────────────────────────────────
+      {id:96,  cat:"🍚 Tahıl & Karb", name:"Pirinç pilavı, pişmiş (100g)", cal:130, p:2.7, c:28,  f:0.3 },
+      {id:97,  cat:"🍚 Tahıl & Karb", name:"Makarna, haşlanmış (100g)",    cal:131, p:5,   c:25,  f:1.1 },
+      {id:98,  cat:"🍚 Tahıl & Karb", name:"Makarna, kuru (100g)",         cal:371, p:13,  c:74,  f:1.5 },
+      {id:99,  cat:"🍚 Tahıl & Karb", name:"Yulaf ezmesi, kuru (50g)",     cal:193, p:6.5, c:33,  f:3.5 },
+      {id:100, cat:"🍚 Tahıl & Karb", name:"Bulgur pilavı, pişmiş (100g)", cal:83,  p:3.1, c:18,  f:0.2 },
+      {id:101, cat:"🍚 Tahıl & Karb", name:"Kuskus, pişmiş (100g)",        cal:112, p:3.8, c:23,  f:0.6 },
+      {id:102, cat:"🍚 Tahıl & Karb", name:"Patates, haşlanmış (100g)",    cal:87,  p:1.9, c:20,  f:0.1 },
+      {id:103, cat:"🍚 Tahıl & Karb", name:"Patates kızartması (100g)",    cal:312, p:3.4, c:41,  f:15  },
+      {id:104, cat:"🍚 Tahıl & Karb", name:"Patates püresi (150g)",        cal:145, p:3,   c:26,  f:4   },
+      {id:105, cat:"🍚 Tahıl & Karb", name:"Mısır (1 koçan 150g)",         cal:132, p:5,   c:29,  f:1.8 },
+      {id:106, cat:"🍚 Tahıl & Karb", name:"Tahini helvası (30g)",         cal:165, p:3.5, c:15,  f:10  },
+
+      // ── SEBZE ────────────────────────────────────────────────────────────
+      {id:107, cat:"🥦 Sebze",        name:"Pırasa, haşlanmış (100g)",     cal:31,  p:1.8, c:7.6, f:0.3 },
+      {id:108, cat:"🥦 Sebze",        name:"Ispanak, haşlanmış (100g)",    cal:23,  p:2.9, c:3.8, f:0.3 },
+      {id:109, cat:"🥦 Sebze",        name:"Brokoli, haşlanmış (100g)",    cal:35,  p:2.4, c:7,   f:0.4 },
+      {id:110, cat:"🥦 Sebze",        name:"Havuç, çiğ (1 orta 80g)",      cal:33,  p:0.7, c:7.7, f:0.1 },
+      {id:111, cat:"🥦 Sebze",        name:"Salatalık (100g)",             cal:16,  p:0.7, c:3.6, f:0.1 },
+      {id:112, cat:"🥦 Sebze",        name:"Patlıcan, kızarmış (100g)",    cal:96,  p:1.5, c:9,   f:6   },
+      {id:113, cat:"🥦 Sebze",        name:"Kabak, haşlanmış (100g)",      cal:17,  p:1.2, c:3.6, f:0.2 },
+      {id:114, cat:"🥦 Sebze",        name:"Biber, kırmızı (100g)",        cal:31,  p:1,   c:6,   f:0.3 },
+      {id:115, cat:"🥦 Sebze",        name:"Mantar, haşlanmış (100g)",     cal:28,  p:3.6, c:5.3, f:0.5 },
+      {id:116, cat:"🥦 Sebze",        name:"Soğan, çiğ (100g)",            cal:40,  p:1.1, c:9.3, f:0.1 },
+      {id:117, cat:"🥦 Sebze",        name:"Marul (100g)",                 cal:15,  p:1.4, c:2.9, f:0.2 },
+      {id:118, cat:"🥦 Sebze",        name:"Roka (100g)",                  cal:25,  p:2.6, c:3.7, f:0.7 },
+
+      // ── MEYVE ────────────────────────────────────────────────────────────
+      {id:119, cat:"🍎 Meyve",        name:"Muz (1 orta 120g)",            cal:105, p:1.3, c:27,  f:0.4 },
+      {id:120, cat:"🍎 Meyve",        name:"Elma (1 orta 180g)",           cal:95,  p:0.5, c:25,  f:0.3 },
+      {id:121, cat:"🍎 Meyve",        name:"Portakal (1 orta 150g)",       cal:62,  p:1.2, c:15,  f:0.2 },
+      {id:122, cat:"🍎 Meyve",        name:"Çilek (100g)",                 cal:33,  p:0.7, c:8,   f:0.3 },
+      {id:123, cat:"🍎 Meyve",        name:"Kivi (1 adet 75g)",            cal:46,  p:0.9, c:11,  f:0.4 },
+      {id:124, cat:"🍎 Meyve",        name:"Üzüm (100g)",                  cal:69,  p:0.7, c:18,  f:0.2 },
+      {id:125, cat:"🍎 Meyve",        name:"Karpuz (200g)",                cal:60,  p:1.2, c:15,  f:0.2 },
+      {id:126, cat:"🍎 Meyve",        name:"Kavun (200g)",                 cal:54,  p:1.3, c:13,  f:0.3 },
+      {id:127, cat:"🍎 Meyve",        name:"Şeftali (1 orta 150g)",        cal:58,  p:1.4, c:14,  f:0.4 },
+      {id:128, cat:"🍎 Meyve",        name:"Armut (1 orta 180g)",          cal:101, p:0.6, c:27,  f:0.2 },
+      {id:129, cat:"🍎 Meyve",        name:"Mandalina (2 adet)",           cal:85,  p:1.3, c:21,  f:0.3 },
+      {id:130, cat:"🍎 Meyve",        name:"Erik (5 adet)",                cal:75,  p:1.1, c:19,  f:0.5 },
+      {id:131, cat:"🍎 Meyve",        name:"Kiraz (15 adet 80g)",          cal:51,  p:0.9, c:13,  f:0.2 },
+      {id:132, cat:"🍎 Meyve",        name:"Nar (yarım adet 150g)",        cal:83,  p:1.5, c:19,  f:1.2 },
+      {id:133, cat:"🍎 Meyve",        name:"İncir, taze (2 adet)",         cal:74,  p:0.9, c:19,  f:0.3 },
+      {id:134, cat:"🍎 Meyve",        name:"Kayısı (3 adet)",              cal:48,  p:1.4, c:11,  f:0.4 },
+      {id:135, cat:"🍎 Meyve",        name:"Limon (1 adet)",               cal:17,  p:0.6, c:5.4, f:0.2 },
+
+      // ── TAZE SIKIM MEYVE SUYU ─────────────────────────────────────────────
+      {id:136, cat:"🥤 Taze Sıkım",   name:"Portakal suyu, taze (200ml)",  cal:88,  p:1.4, c:21,  f:0.2 },
+      {id:137, cat:"🥤 Taze Sıkım",   name:"Nar suyu, taze (200ml)",       cal:134, p:0.9, c:34,  f:0.3 },
+      {id:138, cat:"🥤 Taze Sıkım",   name:"Elma suyu, taze (200ml)",      cal:114, p:0.2, c:28,  f:0.3 },
+      {id:139, cat:"🥤 Taze Sıkım",   name:"Havuç suyu, taze (200ml)",     cal:94,  p:2.2, c:22,  f:0.4 },
+      {id:140, cat:"🥤 Taze Sıkım",   name:"Greyfurt suyu, taze (200ml)",  cal:74,  p:1.4, c:18,  f:0.2 },
+      {id:141, cat:"🥤 Taze Sıkım",   name:"Limonata, ev yapımı (300ml)",  cal:102, p:0.2, c:27,  f:0.1 },
+      {id:142, cat:"🥤 Taze Sıkım",   name:"Karışık meyve suyu (200ml)",   cal:110, p:0.8, c:27,  f:0.2 },
+      {id:143, cat:"🥤 Taze Sıkım",   name:"Şeftali suyu, taze (200ml)",   cal:100, p:0.7, c:25,  f:0.3 },
+      {id:144, cat:"🥤 Taze Sıkım",   name:"Karpuz suyu, taze (250ml)",    cal:75,  p:1.5, c:19,  f:0.3 },
+      {id:145, cat:"🥤 Taze Sıkım",   name:"Domates suyu, taze (200ml)",   cal:38,  p:1.6, c:9,   f:0.2 },
+
+      // ── SÜT & YOĞURT ─────────────────────────────────────────────────────
+      {id:146, cat:"🥛 Süt & Yoğurt", name:"Süt, tam yağlı (200ml)",       cal:122, p:6.4, c:9.4, f:6.6 },
+      {id:147, cat:"🥛 Süt & Yoğurt", name:"Süt, yarım yağlı (200ml)",     cal:92,  p:6.4, c:9.4, f:3.3 },
+      {id:148, cat:"🥛 Süt & Yoğurt", name:"Yoğurt, sade (150g)",          cal:89,  p:5.2, c:6.8, f:4.5 },
+      {id:149, cat:"🥛 Süt & Yoğurt", name:"Yoğurt, light (150g)",         cal:63,  p:5.8, c:7.5, f:1.5 },
+      {id:150, cat:"🥛 Süt & Yoğurt", name:"Yoğurt, %10 yağlı (150g)",    cal:165, p:6,   c:7,   f:12  },
+      {id:151, cat:"🥛 Süt & Yoğurt", name:"Ayran (200ml)",                cal:56,  p:3.2, c:4.2, f:2.8 },
+      {id:152, cat:"🥛 Süt & Yoğurt", name:"Kefir (200ml)",                cal:104, p:6,   c:9,   f:4.4 },
+      {id:153, cat:"🥛 Süt & Yoğurt", name:"Cacık (150g)",                 cal:60,  p:3.5, c:4.5, f:3   },
+      {id:154, cat:"🥛 Süt & Yoğurt", name:"Sütlaç (1 porsiyon 150g)",     cal:162, p:4.5, c:28,  f:4   },
+      {id:155, cat:"🥛 Süt & Yoğurt", name:"Muhallebi (1 porsiyon 150g)",  cal:175, p:5,   c:30,  f:4   },
+
+      // ── KURUYEMIŞ & YAĞI ─────────────────────────────────────────────────
+      {id:156, cat:"🥜 Kuruyemiş",    name:"Badem (10 adet 15g)",           cal:87,  p:3.2, c:3,   f:7.6 },
+      {id:157, cat:"🥜 Kuruyemiş",    name:"Ceviz (4 yarım 15g)",           cal:98,  p:2.3, c:2.1, f:9.7 },
+      {id:158, cat:"🥜 Kuruyemiş",    name:"Fıstık ezmesi (1 y.kaşığı)",   cal:94,  p:4,   c:3,   f:8   },
+      {id:159, cat:"🥜 Kuruyemiş",    name:"Fındık (10 adet 15g)",          cal:94,  p:2.2, c:2.5, f:9   },
+      {id:160, cat:"🥜 Kuruyemiş",    name:"Antep fıstığı (20 adet 15g)",   cal:85,  p:3,   c:4,   f:7   },
+      {id:161, cat:"🥜 Kuruyemiş",    name:"Kaju (10 adet 15g)",            cal:85,  p:2.8, c:4.5, f:7   },
+      {id:162, cat:"🥜 Kuruyemiş",    name:"Zeytinyağı (1 y.kaşığı 10g)",  cal:88,  p:0,   c:0,   f:10  },
+      {id:163, cat:"🥜 Kuruyemiş",    name:"Tereyağı (1 y.kaşığı 10g)",    cal:72,  p:0.1, c:0,   f:8   },
+      {id:164, cat:"🥜 Kuruyemiş",    name:"Tahini (1 y.kaşığı 10g)",      cal:60,  p:1.8, c:2.2, f:5.4 },
+      {id:165, cat:"🥜 Kuruyemiş",    name:"Susam (1 y.kaşığı 10g)",       cal:57,  p:1.8, c:2.3, f:4.8 },
+      {id:166, cat:"🥜 Kuruyemiş",    name:"Keten tohumu (1 y.kaşığı 10g)",cal:55,  p:1.9, c:3,   f:4.3 },
+
+      // ── TATLILAR ────────────────────────────────────────────────────────
+      {id:167, cat:"🍮 Tatlılar",     name:"Baklava (1 dilim 60g)",         cal:245, p:3,   c:32,  f:12  },
+      {id:168, cat:"🍮 Tatlılar",     name:"Künefe (1 porsiyon 150g)",      cal:485, p:12,  c:55,  f:24  },
+      {id:169, cat:"🍮 Tatlılar",     name:"Kadayıf (1 porsiyon 100g)",     cal:320, p:5,   c:48,  f:12  },
+      {id:170, cat:"🍮 Tatlılar",     name:"Lokma (5 adet)",                cal:195, p:2.5, c:28,  f:9   },
+      {id:171, cat:"🍮 Tatlılar",     name:"Revani (1 dilim 80g)",          cal:255, p:4,   c:42,  f:8   },
+      {id:172, cat:"🍮 Tatlılar",     name:"Tulumba (3 adet)",              cal:280, p:3,   c:38,  f:13  },
+      {id:173, cat:"🍮 Tatlılar",     name:"Aşure (1 kase 200g)",           cal:210, p:5,   c:44,  f:2   },
+      {id:174, cat:"🍮 Tatlılar",     name:"Çikolatalı kek (1 dilim 80g)", cal:312, p:4,   c:42,  f:15  },
+      {id:175, cat:"🍮 Tatlılar",     name:"Fırın sütlaç (1 porsiyon)",     cal:185, p:5.5, c:30,  f:5   },
+      {id:176, cat:"🍮 Tatlılar",     name:"Dondurma (2 top 100g)",         cal:207, p:3.5, c:28,  f:10  },
+
+      // ── İÇECEKLER ────────────────────────────────────────────────────────
+      {id:177, cat:"☕ İçecekler",    name:"Türk kahvesi, sade",             cal:2,   p:0.3, c:0,   f:0   },
+      {id:178, cat:"☕ İçecekler",    name:"Türk kahvesi, şekerli (2 şeker)",cal:46,  p:0.3, c:12,  f:0   },
+      {id:179, cat:"☕ İçecekler",    name:"Çay, sade",                      cal:2,   p:0,   c:0.5, f:0   },
+      {id:180, cat:"☕ İçecekler",    name:"Çay, sütlü (200ml)",             cal:42,  p:2,   c:4.5, f:1.5 },
+      {id:181, cat:"☕ İçecekler",    name:"Nescafé, sütlü (200ml)",        cal:92,  p:3.4, c:12,  f:3   },
+      {id:182, cat:"☕ İçecekler",    name:"Filtre kahve, sade (200ml)",     cal:5,   p:0.3, c:0.5, f:0.1 },
+      {id:183, cat:"☕ İçecekler",    name:"Cappuccino (200ml)",             cal:120, p:5,   c:12,  f:5.5 },
+      {id:184, cat:"☕ İçecekler",    name:"Latte (300ml)",                  cal:165, p:8,   c:17,  f:7   },
+      {id:185, cat:"☕ İçecekler",    name:"Salep (200ml)",                  cal:155, p:3.5, c:28,  f:3.5 },
+      {id:186, cat:"☕ İçecekler",    name:"Boza (200ml)",                   cal:140, p:3.5, c:29,  f:0.5 },
+      {id:187, cat:"☕ İçecekler",    name:"Şalgam suyu (200ml)",            cal:30,  p:1.5, c:6.5, f:0.1 },
+      {id:188, cat:"☕ İçecekler",    name:"Gazoz (200ml)",                  cal:84,  p:0,   c:21,  f:0   },
+      {id:189, cat:"☕ İçecekler",    name:"Kola (200ml)",                   cal:84,  p:0,   c:21,  f:0   },
+      {id:190, cat:"☕ İçecekler",    name:"Enerji içeceği (250ml)",         cal:112, p:0.8, c:28,  f:0.1 },
+      {id:191, cat:"☕ İçecekler",    name:"Bitki çayı, herhangi (200ml)",   cal:4,   p:0,   c:1,   f:0   },
+      {id:192, cat:"☕ İçecekler",    name:"Limonata, hazır (200ml)",        cal:90,  p:0,   c:23,  f:0   },
+
+      // ── FAST FOOD ───────────────────────────────────────────────────────
+      {id:193, cat:"🍔 Fast Food",    name:"Hamburger (1 adet orta)",        cal:354, p:20,  c:31,  f:16  },
+      {id:194, cat:"🍔 Fast Food",    name:"Pizza dilimleri (2 dilim)",      cal:480, p:20,  c:56,  f:18  },
+      {id:195, cat:"🍔 Fast Food",    name:"Tavuk nugget (6 adet)",          cal:285, p:16,  c:20,  f:16  },
+      {id:196, cat:"🍔 Fast Food",    name:"Döner dürüm (1 adet)",           cal:480, p:26,  c:48,  f:18  },
+      {id:197, cat:"🍔 Fast Food",    name:"Köfteli sandviç",                 cal:380, p:22,  c:34,  f:15  },
+      {id:198, cat:"🍔 Fast Food",    name:"Tantuni (1 porsiyon)",            cal:385, p:23,  c:40,  f:14  },
     ];
-    const CATS = [...new Set(FOODS.map(f => f.cat))];
+
+    const CATS = [...new Set(BASE_FOODS.map(f => f.cat))];
 
     const todayKey = () => new Date().toISOString().slice(0,10);
+
     function useLS(key, init) {
-      const [v, setV] = useState(() => { try { const s=localStorage.getItem(key); return s?JSON.parse(s):init; } catch{return init;} });
+      const [v, setV] = useState(() => {
+        try { const s=localStorage.getItem(key); return s?JSON.parse(s):init; } catch { return init; }
+      });
       useEffect(() => { try{localStorage.setItem(key,JSON.stringify(v));}catch{} }, [key,v]);
       return [v,setV];
     }
 
+    /* ── COMPONENTS ── */
     function Ring({value,max,size=110,sw=11,color,children}) {
       const r=(size-sw)/2, circ=2*Math.PI*r, dash=Math.min(value/max,1)*circ;
       return (
@@ -128,12 +291,12 @@
       );
     }
 
-    function Bar({label,val,max,color,unit="g"}) {
+    function Bar({label,val,max,color}) {
       return (
         <div style={{marginBottom:8}}>
           <div style={{display:"flex",justifyContent:"space-between",marginBottom:3}}>
             <span style={{fontSize:11,color:"rgba(255,255,255,0.55)",fontWeight:700}}>{label}</span>
-            <span style={{fontSize:11,color:"#fff",fontWeight:800}}>{Math.round(val)}<span style={{color:"rgba(255,255,255,0.3)"}}>/{max}{unit}</span></span>
+            <span style={{fontSize:11,color:"#fff",fontWeight:800}}>{Math.round(val)}<span style={{color:"rgba(255,255,255,0.3)"}}>/{max}g</span></span>
           </div>
           <div style={{height:6,background:"rgba(255,255,255,0.08)",borderRadius:99,overflow:"hidden"}}>
             <div style={{height:"100%",width:`${Math.min((val/max)*100,100)}%`,background:color,borderRadius:99,transition:"width .5s cubic-bezier(.4,0,.2,1)"}}/>
@@ -157,21 +320,24 @@
       );
     }
 
+    /* ── APP ── */
     function App() {
-      const [tab,setTab]           = useState("dash");
-      const [meals,setMeals]       = useLS(`m_${todayKey()}`,[]);
-      const [water,setWater]       = useLS(`w_${todayKey()}`,0);
-      const [wLog,setWLog]         = useLS("wlog",[]);
-      const [workouts,setWorkouts] = useLS(`wo_${todayKey()}`,[]);
-      const [modal,setModal]       = useState(null);
-      const [search,setSearch]     = useState("");
-      const [selCat,setSelCat]     = useState("Tümü");
-      const [mealType,setMealType] = useState("Kahvaltı");
-      const [custom,setCustom]     = useState({name:"",cal:"",p:"",c:"",f:""});
-      const [newKg,setNewKg]       = useState("");
-      const [wo,setWo]             = useState({name:"",sets:"",reps:"",weight:""});
-      const [mlInput,setMlInput]   = useState("");
-      const [toast,setToast]       = useState(null);
+      const [tab,setTab]             = useState("dash");
+      const [meals,setMeals]         = useLS(`m_${todayKey()}`,[]);
+      const [water,setWater]         = useLS(`w_${todayKey()}`,0);
+      const [wLog,setWLog]           = useLS("wlog",[]);
+      const [workouts,setWorkouts]   = useLS(`wo_${todayKey()}`,[]);
+      const [customFoods,setCustomFoods] = useLS("custom_foods",[]); // KALICI ÖZEL YEMEKLER
+      const [modal,setModal]         = useState(null);
+      const [search,setSearch]       = useState("");
+      const [selCat,setSelCat]       = useState("Tümü");
+      const [mealType,setMealType]   = useState("Kahvaltı");
+      const [custom,setCustom]       = useState({name:"",cal:"",p:"",c:"",f:""});
+      const [newKg,setNewKg]         = useState("");
+      const [wo,setWo]               = useState({name:"",sets:"",reps:"",weight:""});
+      const [mlInput,setMlInput]     = useState("");
+      const [toast,setToast]         = useState(null);
+      const [customTab,setCustomTab] = useState("list"); // "list" | "add"
 
       const showToast = msg => { setToast(msg); setTimeout(()=>setToast(null),2000); };
       const T = USER.targets;
@@ -180,22 +346,39 @@
       const wHist  = wLog.slice(-10).map(w=>w.val);
       const C = {cal:"#ff6b6b",p:"#4ecdc4",c:"#ffd93d",f:"#a29bfe",w:"#74b9ff"};
 
+      // Tüm yemekler = temel + kullanıcının kendi eklediği
+      const ALL_FOODS = [...BASE_FOODS, ...customFoods.map((f,i)=>({...f, cat:"⭐ Özel Yemeklerim", id:9000+i}))];
+      const ALL_CATS  = ["Tümü", ...new Set(ALL_FOODS.map(f=>f.cat))];
+
       const addFood = food => {
         setMeals(m=>[...m,{...food,uid:Date.now(),mealType,time:new Date().toLocaleTimeString("tr",{hour:"2-digit",minute:"2-digit"})}]);
         showToast(`✅ ${food.name}`);
         setModal(null); setSearch(""); setSelCat("Tümü");
       };
+
+      // Özel yemek ekle: hem listeye kaydet hem öğüne ekle
       const addCustomFood = () => {
         if(!custom.name||!custom.cal) return;
-        addFood({name:custom.name,cal:+custom.cal,p:+custom.p||0,c:+custom.c||0,f:+custom.f||0});
+        const food = {name:custom.name, cal:+custom.cal, p:+custom.p||0, c:+custom.c||0, f:+custom.f||0};
+        // Kalıcı listeye kaydet
+        setCustomFoods(prev=>[...prev, food]);
+        // Şu anki öğüne de ekle
+        addFood(food);
         setCustom({name:"",cal:"",p:"",c:"",f:""});
+        showToast(`⭐ ${food.name} listeye ve öğüne eklendi!`);
       };
+
+      const deleteCustomFood = idx => {
+        setCustomFoods(prev=>prev.filter((_,i)=>i!==idx));
+        showToast("🗑️ Özel yemek silindi");
+      };
+
       const addWater = ml => { setWater(w=>Math.min(w+ml,6000)); showToast(`💧 +${ml}ml`); };
       const addCustomWater = () => { const ml=parseInt(mlInput); if(!ml||ml<=0) return; addWater(ml); setMlInput(""); };
       const logKg = () => { if(!newKg) return; setWLog(w=>[...w,{date:todayKey(),val:+newKg}]); setNewKg(""); setModal(null); showToast(`⚖️ ${newKg}kg kaydedildi`); };
       const addWo = () => { if(!wo.name) return; setWorkouts(w=>[...w,{...wo,uid:Date.now(),time:new Date().toLocaleTimeString("tr",{hour:"2-digit",minute:"2-digit"})}]); setWo({name:"",sets:"",reps:"",weight:""}); showToast("💪 Egzersiz kaydedildi"); };
 
-      const filtered = FOODS.filter(f=>(selCat==="Tümü"||f.cat===selCat)&&f.name.toLowerCase().includes(search.toLowerCase()));
+      const filtered = ALL_FOODS.filter(f=>(selCat==="Tümü"||f.cat===selCat)&&f.name.toLowerCase().includes(search.toLowerCase()));
 
       const card = (ex={}) => ({background:"rgba(255,255,255,0.053)",borderRadius:15,padding:"13px 13px",border:"1px solid rgba(255,255,255,0.07)",marginBottom:9,...ex});
       const inp  = (ex={}) => ({background:"rgba(255,255,255,0.08)",border:"1px solid rgba(255,255,255,0.11)",borderRadius:10,padding:"10px 12px",color:"#fff",fontSize:14,width:"100%",fontFamily:"inherit",outline:"none",boxSizing:"border-box",...ex});
@@ -210,14 +393,13 @@
         {id:"workout", label:"Antren", icon:"M6 4v16M18 4v16M6 9h12M6 15h12"},
       ];
 
-      // Safe area for iPhone notch
       const safeTop = "env(safe-area-inset-top, 0px)";
       const safeBot = "env(safe-area-inset-bottom, 0px)";
 
       return (
         <div style={{minHeight:"100vh",background:"#0c0c15",fontFamily:"'DM Sans',sans-serif",color:"#fff",maxWidth:390,margin:"0 auto",position:"relative",overflow:"hidden",height:"100vh",display:"flex",flexDirection:"column"}}>
 
-          {toast && <div className="ts" style={{position:"fixed",top:`calc(12px + ${safeTop})`,left:"50%",transform:"translateX(-50%)",background:"rgba(25,25,40,0.97)",border:"1px solid rgba(162,155,254,0.35)",color:"#fff",padding:"8px 16px",borderRadius:99,fontWeight:700,fontSize:12,zIndex:999,whiteSpace:"nowrap",boxShadow:"0 6px 20px rgba(0,0,0,0.5)"}}>{toast}</div>}
+          {toast && <div className="ts" style={{position:"fixed",top:`calc(14px + ${safeTop})`,left:"50%",transform:"translateX(-50%)",background:"rgba(25,25,40,0.97)",border:"1px solid rgba(162,155,254,0.35)",color:"#fff",padding:"8px 18px",borderRadius:99,fontWeight:700,fontSize:12,zIndex:999,whiteSpace:"nowrap",boxShadow:"0 6px 20px rgba(0,0,0,0.5)"}}>{toast}</div>}
 
           {/* HEADER */}
           <div style={{padding:`calc(10px + ${safeTop}) 14px 9px`,background:"linear-gradient(160deg,#13132a,#0c0c15)",borderBottom:"1px solid rgba(255,255,255,0.06)",flexShrink:0}}>
@@ -236,7 +418,7 @@
           {/* CONTENT */}
           <div style={{flex:1,overflowY:"auto",padding:"9px 11px 0",WebkitOverflowScrolling:"touch"}}>
 
-            {/* DASHBOARD */}
+            {/* ── DASHBOARD ── */}
             {tab==="dash" && <div className="pg">
               <div style={card({background:"linear-gradient(135deg,rgba(255,107,107,.12),rgba(162,155,254,.09))"})}>
                 <div style={{display:"flex",alignItems:"center",gap:11}}>
@@ -279,8 +461,8 @@
                   <button style={btn("linear-gradient(135deg,#6c63ff,#ff6b6b)")} onClick={()=>setModal("food")}>+ Ekle</button>
                 </div>
                 {meals.length===0
-                  ? <div style={{textAlign:"center",padding:"14px 0",color:"rgba(255,255,255,0.2)",fontSize:12}}>Henüz öğün yok 🍽️</div>
-                  : meals.slice(-5).map(m=>(
+                  ?<div style={{textAlign:"center",padding:"14px 0",color:"rgba(255,255,255,0.2)",fontSize:12}}>Henüz öğün yok 🍽️</div>
+                  :meals.slice(-5).map(m=>(
                     <div key={m.uid} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"7px 0",borderBottom:"1px solid rgba(255,255,255,0.05)"}}>
                       <div style={{flex:1,minWidth:0}}>
                         <div style={{fontSize:12,fontWeight:700,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{m.name}</div>
@@ -301,8 +483,8 @@
                   <button style={btn("rgba(162,155,254,.2)")} onClick={()=>setTab("workout")}>Detay</button>
                 </div>
                 {workouts.length===0
-                  ? <div style={{textAlign:"center",padding:"10px 0",color:"rgba(255,255,255,0.2)",fontSize:12}}>Henüz egzersiz yok 🏋️</div>
-                  : workouts.slice(0,3).map(w=>(
+                  ?<div style={{textAlign:"center",padding:"10px 0",color:"rgba(255,255,255,0.2)",fontSize:12}}>Henüz egzersiz yok 🏋️</div>
+                  :workouts.slice(0,3).map(w=>(
                     <div key={w.uid} style={{display:"flex",justifyContent:"space-between",padding:"6px 0",borderBottom:"1px solid rgba(255,255,255,0.05)"}}>
                       <span style={{fontSize:12,fontWeight:700}}>{w.name}</span>
                       <span style={{fontSize:11,color:"rgba(255,255,255,0.35)"}}>{w.sets&&`${w.sets}×${w.reps}`}{w.weight&&` · ${w.weight}kg`}</span>
@@ -312,7 +494,7 @@
               </div>
             </div>}
 
-            {/* FOOD */}
+            {/* ── FOOD ── */}
             {tab==="food" && <div className="pg">
               <div style={card({padding:"9px 13px",marginBottom:9})}>
                 <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",textAlign:"center",gap:2}}>
@@ -353,7 +535,7 @@
               })}
             </div>}
 
-            {/* WATER */}
+            {/* ── WATER ── */}
             {tab==="water" && <div className="pg">
               <div style={card({textAlign:"center",background:"linear-gradient(135deg,rgba(116,185,255,.12),rgba(108,99,255,.07))"})}>
                 <div style={{display:"flex",justifyContent:"center",marginBottom:8}}>
@@ -389,7 +571,7 @@
               </div>
             </div>}
 
-            {/* WEIGHT */}
+            {/* ── WEIGHT ── */}
             {tab==="weight" && <div className="pg">
               <div style={card({background:"linear-gradient(135deg,rgba(78,205,196,.11),rgba(108,99,255,.07))"})}>
                 <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:9}}>
@@ -433,7 +615,7 @@
               </div>
             </div>}
 
-            {/* WORKOUT */}
+            {/* ── WORKOUT ── */}
             {tab==="workout" && <div className="pg">
               <div style={card({background:"linear-gradient(135deg,rgba(162,155,254,.12),rgba(255,107,107,.07))"})}>
                 <div style={{fontSize:15,fontWeight:900,marginBottom:2}}>Bugünkü Antrenman 💪</div>
@@ -475,30 +657,39 @@
             <div style={{height:20}}/>
           </div>
 
-          {/* FOOD MODAL */}
+          {/* ══ FOOD MODAL ══ */}
           {modal==="food" && (
             <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.78)",zIndex:100,display:"flex",alignItems:"flex-end",backdropFilter:"blur(4px)"}} onClick={()=>setModal(null)}>
-              <div style={{background:"#181828",borderRadius:"18px 18px 0 0",padding:`16px 13px calc(24px + ${safeBot})`,width:"100%",maxHeight:"90vh",overflowY:"auto",maxWidth:390,margin:"0 auto"}} onClick={e=>e.stopPropagation()}>
+              <div style={{background:"#181828",borderRadius:"18px 18px 0 0",padding:`16px 13px calc(22px + ${safeBot})`,width:"100%",maxHeight:"92vh",overflowY:"auto",maxWidth:390,margin:"0 auto"}} onClick={e=>e.stopPropagation()}>
+
                 <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:12}}>
                   <div style={{fontSize:16,fontWeight:900}}>Yemek Ekle</div>
                   <button onClick={()=>setModal(null)} style={btn("rgba(255,255,255,.09)",false,{fontSize:12})}>✕</button>
                 </div>
+
+                {/* Öğün tipi */}
                 <div style={{display:"flex",gap:6,marginBottom:10,overflowX:"auto"}}>
                   {["Kahvaltı","Öğle","Akşam","Ara Öğün"].map(t=>(
                     <button key={t} onClick={()=>setMealType(t)} style={{...btn(mealType===t?"linear-gradient(135deg,#6c63ff,#a29bfe)":"rgba(255,255,255,.07)"),whiteSpace:"nowrap",flexShrink:0}}>{t}</button>
                   ))}
                 </div>
-                <input style={{...inp(),marginBottom:9}} placeholder="🔍 Yemek ara..." value={search} onChange={e=>setSearch(e.target.value)}/>
+
+                {/* Arama */}
+                <input style={{...inp(),marginBottom:9}} placeholder="🔍 Yemek ara... (198 çeşit)" value={search} onChange={e=>setSearch(e.target.value)}/>
+
+                {/* Kategori */}
                 <div style={{display:"flex",gap:5,marginBottom:10,overflowX:"auto",paddingBottom:2}}>
-                  {["Tümü",...CATS].map(c=>(
+                  {ALL_CATS.map(c=>(
                     <button key={c} onClick={()=>setSelCat(c)} style={{...btn(selCat===c?"rgba(162,155,254,.3)":"rgba(255,255,255,.06)"),whiteSpace:"nowrap",flexShrink:0,fontSize:11,padding:"6px 10px"}}>{c}</button>
                   ))}
                 </div>
-                <div style={{maxHeight:220,overflowY:"auto",marginBottom:13}}>
+
+                {/* Liste */}
+                <div style={{maxHeight:230,overflowY:"auto",marginBottom:13}}>
                   {filtered.length===0
                     ?<div style={{textAlign:"center",padding:"18px 0",color:"rgba(255,255,255,0.25)",fontSize:12}}>Sonuç bulunamadı</div>
-                    :filtered.map(f=>(
-                      <div key={f.id} onClick={()=>addFood(f)} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"9px 0",borderBottom:"1px solid rgba(255,255,255,0.06)",cursor:"pointer"}}>
+                    :filtered.map((f,i)=>(
+                      <div key={f.id??i} onClick={()=>addFood(f)} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"9px 0",borderBottom:"1px solid rgba(255,255,255,0.06)",cursor:"pointer"}}>
                         <div style={{flex:1,minWidth:0}}>
                           <div style={{fontSize:12,fontWeight:700,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{f.name}</div>
                           <div style={{fontSize:9,color:"rgba(255,255,255,0.3)"}}>P:{f.p}g · K:{f.c}g · Y:{f.f}g</div>
@@ -508,21 +699,49 @@
                     ))
                   }
                 </div>
-                <div style={{borderTop:"1px solid rgba(255,255,255,.07)",paddingTop:13}}>
-                  <div style={{fontWeight:800,marginBottom:9,fontSize:12}}>Özel Yemek Ekle</div>
-                  <input style={{...inp(),marginBottom:7}} placeholder="Yemek adı" value={custom.name} onChange={e=>setCustom(p=>({...p,name:e.target.value}))}/>
-                  <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:6,marginBottom:9}}>
-                    {[["Kcal","cal"],["Pro","p"],["Karb","c"],["Yağ","f"]].map(([ph,k])=>(
-                      <input key={k} style={inp()} placeholder={ph} type="number" value={custom[k]} onChange={e=>setCustom(p=>({...p,[k]:e.target.value}))}/>
-                    ))}
+
+                {/* ── ÖZEL YEMEK BÖLÜMÜ ── */}
+                <div style={{borderTop:"1px solid rgba(255,255,255,.08)",paddingTop:13}}>
+                  {/* Tab bar */}
+                  <div style={{display:"flex",gap:6,marginBottom:12}}>
+                    <button onClick={()=>setCustomTab("add")} style={btn(customTab==="add"?"linear-gradient(135deg,#ffd93d,#ff6b6b)":"rgba(255,255,255,.07)",false,{flex:1})}>+ Yeni Ekle</button>
+                    <button onClick={()=>setCustomTab("list")} style={btn(customTab==="list"?"linear-gradient(135deg,#a29bfe,#6c63ff)":"rgba(255,255,255,.07)",false,{flex:1})}>⭐ Listem ({customFoods.length})</button>
                   </div>
-                  <button style={btn("linear-gradient(135deg,#ff6b6b,#ffd93d)",true)} onClick={addCustomFood}>Özel Yemek Ekle</button>
+
+                  {customTab==="add" && <>
+                    <div style={{fontWeight:800,marginBottom:9,fontSize:12,color:"rgba(255,255,255,0.7)"}}>Özel Yemek Ekle → Listeye de kaydedilir</div>
+                    <input style={{...inp(),marginBottom:7}} placeholder="Yemek adı" value={custom.name} onChange={e=>setCustom(p=>({...p,name:e.target.value}))}/>
+                    <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:6,marginBottom:9}}>
+                      {[["Kcal","cal"],["Pro(g)","p"],["Karb(g)","c"],["Yağ(g)","f"]].map(([ph,k])=>(
+                        <input key={k} style={{...inp(),fontSize:12,padding:"9px 8px",textAlign:"center"}} placeholder={ph} type="number" value={custom[k]} onChange={e=>setCustom(p=>({...p,[k]:e.target.value}))}/>
+                      ))}
+                    </div>
+                    <button style={btn("linear-gradient(135deg,#ffd93d,#ff6b6b)",true)} onClick={addCustomFood}>⭐ Ekle ve Listeye Kaydet</button>
+                  </>}
+
+                  {customTab==="list" && <>
+                    {customFoods.length===0
+                      ?<div style={{textAlign:"center",padding:"16px 0",color:"rgba(255,255,255,0.25)",fontSize:12}}>Henüz özel yemek eklenmedi<br/>"+  Yeni Ekle" ile ekleyebilirsin</div>
+                      :customFoods.map((f,i)=>(
+                        <div key={i} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"9px 0",borderBottom:"1px solid rgba(255,255,255,0.06)"}}>
+                          <div style={{flex:1,minWidth:0,cursor:"pointer"}} onClick={()=>addFood(f)}>
+                            <div style={{fontSize:12,fontWeight:700,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>⭐ {f.name}</div>
+                            <div style={{fontSize:9,color:"rgba(255,255,255,0.3)"}}>P:{f.p}g · K:{f.c}g · Y:{f.f}g</div>
+                          </div>
+                          <div style={{display:"flex",alignItems:"center",gap:8,flexShrink:0}}>
+                            <span style={{fontSize:13,fontWeight:900,color:C.cal,cursor:"pointer"}} onClick={()=>addFood(f)}>{f.cal} kcal</span>
+                            <button onClick={()=>deleteCustomFood(i)} style={{background:"rgba(255,107,107,.15)",border:"none",borderRadius:6,padding:"4px 7px",cursor:"pointer",color:C.cal,fontSize:11}}>🗑</button>
+                          </div>
+                        </div>
+                      ))
+                    }
+                  </>}
                 </div>
               </div>
             </div>
           )}
 
-          {/* WEIGHT MODAL */}
+          {/* ══ WEIGHT MODAL ══ */}
           {modal==="weight" && (
             <div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.78)",zIndex:100,display:"flex",alignItems:"flex-end",backdropFilter:"blur(4px)"}} onClick={()=>setModal(null)}>
               <div style={{background:"#181828",borderRadius:"18px 18px 0 0",padding:`20px 14px calc(40px + ${safeBot})`,width:"100%",maxWidth:390,margin:"0 auto"}} onClick={e=>e.stopPropagation()}>
